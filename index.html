@@ -1,0 +1,162 @@
+<!--# Explicitando os componentes de criação de um documento html
+
+# html ******
+É uma linguagem de marcação de texto através das TAGs, que permite apresentar 
+informações na internet; como links, imagens e o próprio texto.
+
+# html lang *****
+Linguagem do arquivo
+
+# head *****
+É a parte que não é exibida no navegador da Web quando a página é carregada.
+
+# charset *****
+representar qualquer caractere de qualquer idioma. Ao usar o charset dentro da 
+tag meta de nosso arquivo estamos dizendo ao navegador: quando for ler esse arquivo,
+use as regras do charset UTF-8.
+
+# viewport *****
+O viewport é a área onde seu website aparece. É a área branca da janela quando
+você abre o browser. O viewport sempre vai ter o tamanho da janela.
+Por isso precisamos fazer com que o viewport mostre o conteúdo se baseando pelo 
+tamanho da tela e não da resolução.
+
+# content *****
+
+
+# width=device-width *****
+Os valores podem ser em PX ou “device-width”, que determina automaticamente um 
+valor igual a largura da tela do dispositivo. Define uma altura para o viewport. 
+Os valores podem ser em PX ou “device-height”.
+
+# width *****
+Define uma largura para o viewport. Os valores podem ser em PX ou 
+“device-width”, que determina automaticamente um valor igual a largura
+da tela do dispositivo.
+
+# height *****
+Define uma altura para o viewport. Os valores podem ser em PX ou “device-height”,
+que determina automaticamente um valor igual a altura da tela do dispositivo.
+
+# initial-scale *****
+Define a escala inicial do viewport.
+
+# title *****
+Define o título do documento, mostrado na barra de título de um navegador
+ou na aba da página.
+
+# script *****
+É usado para incluir ou referenciar um script executável. Conteúdo de
+metadados, Fluxo de conteúdo, Conteúdo fraseado. Script dinâmico, como 
+text/javascript.
+
+# defer *****
+O atributo defer diz ao navegador para executar o script apenas quando 
+a análise do HTML estiver finalizada. Mesmo se o download completo do 
+script acontecer antes da análise completa do HTML, ele só será executado depois.
+
+# src *****
+Aponta para o endereço URI do arquivo de imagem.
+
+# link *****
+.Especifica as relações entre o documento atual e um recurso externo.
+Possíveis usos para este elemento incluem a definição de uma estrutura
+relacional para navegação. Este elemento é mais usado para vincular as
+folhas de estilo.
+
+# rel *****
+Esse atributo define o relacionamento entre o arquivo em que o comando
+está escrito e o arquivo que é definido no caminho do hre.
+
+# rel="stylesheet" *****
+Especifica que o documento em questão é uma folha de estilo externa.-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <!--Explicando o código
+
+        Foi criado uma main, colocando em ordem os elementos da formação
+        de um painel de login-->
+
+
+    <main class = "login">
+        <div class = "login__container">
+            <h1 class = "login__title">Login</h1>
+            <form class = "login__form"></form>
+            <input class = "login__input" type="email" placeholder="e-mail">
+            <span class = "login__input-border"></span>
+            <input class = "login__input" type="password" placeholder="senha">
+            <span class = "login__input-border"></span>
+            <button class = "login__submit">Login</button>
+            <a class = "login__reset" href="#">Esqueci a senha</a>
+
+        </div>
+    </main>
+</body>
+</html>
+
+<!--Siginificado dos elementos
+
+    # main *****
+    O elemento <main> define o conteúdo principal dentro do <body>
+
+    # class
+    O elemento class permitem ao CSS e Javascript selecionar e acessar elementos 
+    específicos através dos seletores de class ou funções como o método DOM document. 
+    getElementsByClassName.
+
+    # div
+    É um container genérico para conteúdo de fluxo, pode ser utilizado para agrupar
+    elementos para fins de estilos (usando class ou id), ou porque eles compartilham 
+    valores de atributos, como lang.
+
+    # h1
+    É uma tag HTML que indica um título em um sit, utilizados para destacar títulos
+    e subtítulos de uma página. Elas são utilizadas na hierarquização e estrutura de 
+    uma página.
+
+    # form
+    É uma ferramenta do HTML, que permite a criação de documentos interativos 
+    no WWW, submete os dados de entrada do usuário a um programa que se encarregará 
+    do processamento desses dados, de acordo com o interesse do criador do documento.
+
+    # input
+    É usado para criar controles interativos para formulários baseados na web para 
+    receber dados do usuário.
+
+    # type
+    Especifica o valor do atributo e o seu número maxímos de caracteres que um 
+    usuário pode inserir.
+
+    # placeholder
+    É utilizado para indicar ao navegador o texto que deverá aparecer escrito 
+    no campo do formulário, na maioria das vezes utilizado para indicar ao usuário 
+    como deve ser preenchido aquele campo em específico ou a função daquele campo de 
+    formulário.
+
+    
+    É um conteiner generico em linha para conteúdo fraseado , que não representa 
+    nada por natureza. Ele pode ser usado para agrupar elementos para fins de estilo
+    (usando os atributos class ou id ), ou para compartilhar valores de atributos como lang.
+
+    # button
+    Representa um botão clicável. Categorias de conteúdo Conteúdo de fluxo, conteúdo 
+    fraseado, Conteúdo iterativo, listado, rotulável, e elemento enviável associado a 
+    formulário, conteúdo palpável.
+
+    # a
+    Serve para indicar que um elemento conterá uma hiperligação. Ou seja, um link
+    para redirecionar a outra página. 
+
+    # href
+    Serve para apontar para algo externo(fora da página) que o usuário requisitar, 
+    ou que a página que o contêm necessitar.-->

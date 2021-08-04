@@ -1,0 +1,225 @@
+/* root se equipara à raíz de uma árvore, que por sua vez representa o documento. 
+Aplicado ao HTML, :root representa o elemento <html> e é identico ao seletor html, 
+exceto que sua especificidade é mais alta. 
+
+Utilizamos o root para criar um conjunto de variaveis que mais se repetem no nosso 
+código pra implementar uma edição/manutenção mais facíl e eficiente
+
+Esmiuçando o root
+
+1-var input-linear = linha de entrada que recebe um linear gradiente com as respectivas cores.
+2-var input-error = recebe a cor vermelha.
+3-var button-linear = recebe um gradiente linear com as cores correspondentes.
+4-var button-disabled = recebe a cor #acacac.
+5-var button-success = recebe a cor rgb(18, 151, 107)
+6-var white = recebe a cor #fff.
+7-var gray = recebe a cor 929292.
+8-var light-gray = recebe a cor: #cfcfcf;
+9-var border-heigh = recebe a borda de 1px */
+
+:root {
+    --input-linear: linear-gradient(120deg, #F75590, #00C2CB);
+    --input-error: red;
+    --button-linear: linear-gradient(120deg, #F75590, #00C2CB, #F75590);
+    --button-disabled: #acacac;
+    --button-success: rgb(18, 151, 107);
+    --white: #fff;
+    --black: #303030;
+    --gray: #929292;
+    --light-gray: #cfcfcf;
+    --border-height: 1px;
+  }
+  
+  /* esmiuçando o body
+
+  1-padding = espeficifanco preenchimento 0 para o corpo do meu html.
+  2-margin = espeficifanco margem 0 para o corpo do meu html.
+  3-ont-family = espeficifanco uma fonte "x" para o corpo do meu html.
+  */
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+  }
+  
+  /* esmiuçando o .login
+
+  O .login é uma class que refencia a main.
+  
+  1-height = define a altura e largura da minha viewport.
+  2-background = minha cor de fundo vai ter uma variavel da cor "x".
+  3-display: flex = organizar os elementos de uma página HTML dentro
+  de seus containers de forma dinâmica Ou seja, independente das 
+  suas dimensões eles sempre manterão um layout flexível dentro 
+  do seu elemento pai, reorganizando-se e acordo com a necessidade.
+  4-justify-content: center = justificando o conteudo ao centro.
+  5-align-items: center = alinhando os itens ao centro.*/
+
+  .login {
+    height: 100vh;
+    background: var(--input-linear);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* esmiuçando o .login__containe
+
+  O .login__containe é uma class que refencia a div pai
+
+  1-min-height: 400px = altura minima 400px
+  2-width = largura 300px
+  3-background-color = cor de fundo que remeta a variavel (x) com a respectiva cor
+  4-box-sizing: border-box = tamanho da caixa , moldura
+  5-padding = preenchimento de 32px
+  6-border-radius = tamanho da borda do raio 8px
+  7-display: flex = organizar os elementos de uma página HTML dentro
+  de seus containers de forma dinâmica Ou seja, independente das 
+  suas dimensões eles sempre manterão um layout flexível dentro 
+  do seu elemento pai, reorganizando-se e acordo com a necessidade.
+  8-flex-direction = direção flexivel formato coluna.
+  9-align-items = alinhamento dos itens ao centro.*/
+  
+  .login__container {
+    min-height: 400px; 
+    width: 300px;
+    background-color: var(--white);
+    box-sizing: border-box;
+    padding: 32px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* esmiuçando o .login__title
+
+  O .login__tilhe é uma class que refencia meu h1.
+
+  1-margin-bottom = margem do butão de 32px
+  2-color = cor do meu titulo preta.*/
+  
+  .login__title {
+    margin-bottom: 32px;
+    color: var(--black);
+  }
+
+  /* esmiuçando o .login__form
+   
+  O .login__form é uma class que refencia o formulario.
+
+  1-height = altura de 100%
+  2-display: flex = organizar os elementos de uma página HTML dentro
+  de seus containers de forma dinâmica Ou seja, independente das 
+  suas dimensões eles sempre manterão um layout flexível dentro 
+  do seu elemento pai, reorganizando-se e acordo com a necessidade.
+  3-flex-direction: column = direção flexivel formato coluna.
+  4-justify-content = justificar o conteudo ao centro.
+  5-align-items = alinhar itens ao centro.*/
+
+  .login__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* esmiuçando o .login__input 
+  
+  O .login__input é uma class que refencia o input.
+
+  1-height = altura de 48px.
+  2-width = largura de 100%.
+  3-box-sizing = tamanho da caixa , moldura.
+  4-padding-left = preenchimento a esqueda de 8px.
+  5-border: unset = borda não definida (tira a cor de dentro da borda)
+  6-outline: none = sem contorno.
+  7-position: relative = posição relativa. 
+
+  */
+  
+  .login__input {
+    height: 48px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 8px;
+    border: unset;
+    outline: none;
+    position: relative;
+  }
+  
+  .login__input-border {
+    height: var(--border-height);
+    width: 100%;
+    margin-bottom: 16px;
+    background: var(--light-gray);
+    transition: .3s ease-in-out;
+  }
+  
+  .login__input-border::after {
+    content: '';
+    display: block;
+    height: var(--border-height);
+    width: 0;
+    margin-bottom: 16px;
+    background: var(--input-linear);
+    transition: .3s ease-in-out;
+  }
+  
+  .login__input:focus + .login__input-border::after {
+    width: 100%;
+  }
+  
+  .login__input-border.error {
+    background: var(--input-error);
+  }
+  
+  .login__input-border.error::after {
+    background: var(--input-error);
+  }
+  
+  .login__submit {
+    height: 48px;
+    width: 100%;
+    padding-left: 8px;
+    outline: none;
+    position: relative;
+    background: var(--button-linear);
+    background-size: 200%;
+    margin-bottom: 32px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: bold;
+    border: unset;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+  
+  .login__submit:disabled {
+    background: var(--button-disabled);
+    cursor: not-allowed;
+  }
+  
+  .login__submit:hover {
+    background-position: right;
+  }
+  
+  .login__submit.success {
+    background: var(--button-success);
+  }
+  
+  .login__submit.error {
+    background: var(--input-error);
+  }
+  
+  .login__reset {
+    font-size: 12px;
+    color: var(--gray);
+    text-decoration: none;
+  }
+  
+  
+  
